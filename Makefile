@@ -5,8 +5,11 @@ AR = ar
 ARF = -rcs
 NAME = libftprintf.a
 
-MAN = 	ft_printf/ft_printf	libft/ft_strrchr	libft/ft_atoi	libft/ft_strlen \
-		ft_printf/hex_helper	libft/ft_itoa
+MAN = 	ft_printf/ft_printf	libft/ft_strlen	ft_printf/hex_helper \
+	ft_printf/nbr_helper	ft_printf/char_process	ft_printf/hex_process	ft_printf/nb_process	\
+	ft_printf/nb_process_u	ft_printf/percent_process	ft_printf/percent_process	\
+	ft_printf/ptr_process	ft_printf/str_process	ft_printf/counters
+
 MANFC = $(addsuffix .c, $(MAN))
 MANO = $(MANFC:.c=.o)
 
@@ -27,6 +30,7 @@ clean:
 fclean: clean
 	$(MAKE) fclean -C ./libft
 	@rm -f $(NAME)
+bonus : $(NAME)
 
 re: fclean all
 
